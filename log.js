@@ -21,13 +21,21 @@ module.exports = (() => {
     if (!message || (!level && level !== 0)) {
       throw new Error('Both message and level must be passed!');
     } else if (currentLogLevel >= level) {
-        console.log(message);
+        process.stdout.write(message);
     }
+  }
+
+    function writeLine(message, level) {
+    if (message) {
+      message = `${message}\n`;
+    }
+    write(message, level);
   }
 
   return {
     LOG_LEVEL,
     setCurrentLevel: setCurrentLevel,
-    write: write
+    write: write,
+    writeLine, writeLine
   };
 })();

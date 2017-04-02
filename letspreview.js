@@ -12,7 +12,7 @@ require('yargs').usage('$0 <cmd> <name> [options]')
   .alias('h', 'help')
   .option('q', {
     alias: 'quiet',
-    describe: 'Supress Output',
+    describe: 'Suppress Output',
     type: 'boolean',
     global: true
   })
