@@ -10,7 +10,9 @@
     "letspreview": "letspreview.js"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "validate": "npm run lint && npm run test",
+    "test": "jasmine ./spec/**/* --verbose",
+    "lint": "eslint *.js spec/**"
   },
   "repository": {
     "type": "git",
