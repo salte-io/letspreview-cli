@@ -55,6 +55,7 @@ exports.handler = function(argv) {
     });
 
     let url = `${config.API_URL}publish/${argv.name}`;
+    console.log(`using url: ${url}`);
     log.write(chalk.white(`Uploading Archive to ${url}...`), log.LOG_LEVEL.VERBOSE);
     return fetch(url, {
         method: 'POST',
