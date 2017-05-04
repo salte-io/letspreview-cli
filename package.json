@@ -2,17 +2,20 @@
   "name": "letspreview-cli",
   "version": "0.0.0-semantically-released.0",
   "description": "A commandline tool for Lets PReview",
-  "main": "letspreview.js",
+  "main": "index.js",
   "engines": {
     "node": ">=4.0"
   },
   "bin": {
-    "letspreview": "letspreview.js"
+    "letspreview": "index.js"
   },
   "scripts": {
+    "lint": "eslint *.js spec/**",
+    "test": "istanbul cover jasmine ./spec/**/*",
     "validate": "npm run lint && npm run test",
-    "test": "jasmine ./spec/**/* --verbose",
-    "lint": "eslint *.js spec/**"
+    "report-coverage": "istanbul cover node_modules/jasmine/bin/jasmine.js",
+    "publish-latest": "publish-latest --user-email nick+salte-bot@salte.io --user-name salte-bot",
+    "semantic-release": "semantic-release pre && npm publish && npm run publish-latest && semantic-release post"
   },
   "repository": {
     "type": "git",
@@ -32,7 +35,7 @@
     "eslint": "^3.18.0",
     "eslint-config-google": "^0.7.1",
     "eslint-plugin-jasmine": "^2.2.0",
-    "jasmine": "^2.5.3",
-    "pact": "^2.3.1"
+    "istanbul": "^0.4.5",
+    "jasmine": "^2.5.3"
   }
 }

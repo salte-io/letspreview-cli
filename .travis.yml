@@ -1,0 +1,19 @@
+sudo: false
+language: node_js
+node_js: node
+cache:
+  directories:
+    - node_modules
+branches:
+  only:
+    - master
+    - /^greenkeeper/.*$/
+before_script:
+  - npm prune
+script:
+  - npm run validate
+after_success:
+  - npm run report-coverage
+  - npm run semantic-release
+notifications:
+  email: change

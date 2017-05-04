@@ -16,6 +16,6 @@ require('yargs').usage('$0 <cmd> <name> [options]')
     type: 'boolean',
     global: true
   })
-  .command(require('./publish'))
-  .command(require('./unpublish'))
+  .command(require('./src/commands/publish'))
+  .command(require('./src/commands/unpublish'))
   .demandCommand(1, 'You must specify a command to execute.').argv;

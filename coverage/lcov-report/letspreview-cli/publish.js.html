@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for letspreview-cli/publish.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">all files</a> / <a href="index.html">letspreview-cli/</a> publish.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>0/48</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/16</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/3</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>0/48</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83</td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" >const config = require('./config');</span>
+<span class="cstat-no" title="statement not covered" >const log = require('./log');</span>
+<span class="cstat-no" title="statement not covered" >const fs = require('fs');</span>
+<span class="cstat-no" title="statement not covered" >const targz = require('tar.gz');</span>
+<span class="cstat-no" title="statement not covered" >const uuid = require('uuid');</span>
+<span class="cstat-no" title="statement not covered" >const FormData = require('form-data');</span>
+<span class="cstat-no" title="statement not covered" >const fetch = require('./fetch');</span>
+<span class="cstat-no" title="statement not covered" >const os = require('os');</span>
+<span class="cstat-no" title="statement not covered" >const path = require('path');</span>
+<span class="cstat-no" title="statement not covered" >const chalk = require('chalk');</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >exports.command = 'publish &lt;name&gt; [options]';</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >exports.describe = 'Pushes the application to letspreview.io.';</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >exports.builder = <span class="fstat-no" title="function not covered" >function(yargs) {</span></span>
+<span class="cstat-no" title="statement not covered" >  return yargs.option('k', {</span>
+      alias: 'key',
+      describe: 'The api key used to publish the application.',
+      type: 'string'
+  }).option('d', {
+      alias: 'directory',
+      describe: 'The application source directory.',
+      type: 'string'
+  }).demandOption('key');
+};
+&nbsp;
+<span class="cstat-no" title="statement not covered" >exports.handler = <span class="fstat-no" title="function not covered" >function(argv) {</span></span>
+<span class="cstat-no" title="statement not covered" >  log.setCurrentLevel(argv.verbose ? log.LOG_LEVEL.VERBOSE : argv.quiet ? log.LOG_LEVEL.SILENT : log.LOG_LEVEL.NORMAL);</span>
+<span class="cstat-no" title="statement not covered" >  log.writeLine(chalk.white('==============================================================================='), log.LOG_LEVEL.VERBOSE);</span>
+<span class="cstat-no" title="statement not covered" >  log.writeLine(chalk.white(`= Publishing ${argv.name}`), log.LOG_LEVEL.VERBOSE);</span>
+<span class="cstat-no" title="statement not covered" >  log.writeLine(chalk.white('==============================================================================='), log.LOG_LEVEL.VERBOSE);</span>
+<span class="cstat-no" title="statement not covered" >  let finished = () =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    log.writeLine(chalk.white('==============================================================================='), log.LOG_LEVEL.VERBOSE);</span>
+<span class="cstat-no" title="statement not covered" >    log.writeLine(chalk.white(`= Finished Publishing ${argv.name}`), log.LOG_LEVEL.VERBOSE);</span>
+<span class="cstat-no" title="statement not covered" >    log.writeLine(chalk.white('==============================================================================='), log.LOG_LEVEL.VERBOSE);</span>
+  };
+&nbsp;
+  // Create Archive
+<span class="cstat-no" title="statement not covered" >  let directory = argv.directory ? argv.directory : process.cwd();</span>
+<span class="cstat-no" title="statement not covered" >  let temp = os.tmpdir().endsWith(path.sep) ? os.tmpdir() : os.tmpdir().concat(path.sep);</span>
+<span class="cstat-no" title="statement not covered" >  let filename = `${uuid.v4()}.tar.gz`;</span>
+<span class="cstat-no" title="statement not covered" >  log.write(chalk.white(`Archiving ${directory} to ${temp.concat(filename)}...`), log.LOG_LEVEL.VERBOSE);</span>
+<span class="cstat-no" title="statement not covered" >  let read = targz({}, {fromBase: true}).createReadStream(directory);</span>
+<span class="cstat-no" title="statement not covered" >  let write = fs.createWriteStream(temp.concat(filename));</span>
+<span class="cstat-no" title="statement not covered" >  read.pipe(write);</span>
+&nbsp;
+  // Upload Archive
+<span class="cstat-no" title="statement not covered" >  write.on('finish', <span class="fstat-no" title="function not covered" >function() {</span></span>
+<span class="cstat-no" title="statement not covered" >    log.writeLine(chalk.green('COMPLETE'), log.LOG_LEVEL.VERBOSE);</span>
+<span class="cstat-no" title="statement not covered" >    let form = new FormData();</span>
+<span class="cstat-no" title="statement not covered" >    form.append('file', fs.createReadStream(temp.concat(filename)), {</span>
+        filename: filename,
+        contentType: 'application/zip'
+    });
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    let url = `${config.API_URL}publish/${argv.name}`;</span>
+<span class="cstat-no" title="statement not covered" >    console.log(`using url: ${url}`);</span>
+<span class="cstat-no" title="statement not covered" >    log.write(chalk.white(`Uploading Archive to ${url}...`), log.LOG_LEVEL.VERBOSE);</span>
+<span class="cstat-no" title="statement not covered" >    return fetch(url, {</span>
+        method: 'POST',
+        body: form,
+        headers: {
+            'Authorization': `token ${argv.key}`
+        }
+    }).then((res) =&gt; {
+<span class="cstat-no" title="statement not covered" >      log.writeLine(chalk.green('COMPLETE'), log.LOG_LEVEL.VERBOSE);</span>
+<span class="cstat-no" title="statement not covered" >      if (res.status === 200 &amp;&amp; res.statusText === 'OK') {</span>
+<span class="cstat-no" title="statement not covered" >        log.writeLine(chalk.green(`The contents of ${directory} were successfully uploaded and may be accessed via ${config.APP_URL_TEMPLATE.replace('APP_NAME', argv.name)}`), log.LOG_LEVEL.NORMAL);</span>
+      } else {
+<span class="cstat-no" title="statement not covered" >        log.writeLine(chalk.red(`An unexpected response was received from the server: ${res.statusText}`), log.LOG_LEVEL.ERROR);</span>
+      }
+<span class="cstat-no" title="statement not covered" >      fs.unlinkSync(temp.concat(filename));</span>
+<span class="cstat-no" title="statement not covered" >      finished();</span>
+    }).catch((error) =&gt; {
+<span class="cstat-no" title="statement not covered" >      let message = error.response &amp;&amp; error.response.statusText ? error.response.statusText : error;</span>
+<span class="cstat-no" title="statement not covered" >      log.writeLine(chalk.red(`Unable to upload the contents of ${directory}: ${message}`), log.LOG_LEVEL.ERROR);</span>
+<span class="cstat-no" title="statement not covered" >      fs.unlinkSync(temp.concat(filename));</span>
+<span class="cstat-no" title="statement not covered" >      finished();</span>
+    });
+  });
+};
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sat Apr 15 2017 22:32:29 GMT-0500 (CDT)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>
