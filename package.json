@@ -12,7 +12,6 @@
   "scripts": {
     "lint": "eslint *.js spec/**",
     "test": "istanbul cover node_modules/jasmine/bin/jasmine.js ./spec/**/*",
-    "validate": "npm run lint && npm run test",
     "report-coverage": "coveralls < coverage/lcov.info",
     "publish-latest": "publish-latest --user-email nick+salte-bot@salte.io --user-name salte-bot",
     "semantic-release": "semantic-release pre && npm publish && npm run publish-latest && semantic-release post"
