@@ -1,8 +1,8 @@
 'use strict';
 
-const log = require('./log');
+const log = require('./core/log');
 const chalk = require('chalk');
-const unpublish = require('./unpublish');
+const unpublish = require('./core/unpublish');
 
 exports.command = 'unpublish <name> [options]';
 

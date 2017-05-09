@@ -11,9 +11,10 @@
   },
   "scripts": {
     "lint": "eslint *.js spec/**",
-    "test": "istanbul cover jasmine ./spec/**/*",
+    "test": "jasmine ./spec/**/*",
     "validate": "npm run lint && npm run test",
-    "report-coverage": "istanbul cover node_modules/jasmine/bin/jasmine.js",
+    "run-coverage": "istanbul cover node_modules/jasmine/bin/jasmine.js ./spec/**/*",
+    "report-coverage": "coveralls < coverage/lcov.info",
     "publish-latest": "publish-latest --user-email nick+salte-bot@salte.io --user-name salte-bot",
     "semantic-release": "semantic-release pre && npm publish && npm run publish-latest && semantic-release post"
   },
@@ -32,6 +33,7 @@
     "yargs": "^7.0.2"
   },
   "devDependencies": {
+    "coveralls": "^2.13.1",
     "eslint": "^3.18.0",
     "eslint-config-google": "^0.7.1",
     "eslint-plugin-jasmine": "^2.2.0",

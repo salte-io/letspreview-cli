@@ -1,5 +1,7 @@
 #!/usr/bin/env node
 
+'use strict';
+
 require('yargs').usage('$0 <cmd> <name> [options]')
   .group(['v', 'h', 'q'], 'Global Options')
   .option('v', {
@@ -16,6 +18,6 @@ require('yargs').usage('$0 <cmd> <name> [options]')
     type: 'boolean',
     global: true
   })
-  .command(require('./src/commands/publish'))
-  .command(require('./src/commands/unpublish'))
+  .command(require('./publishConsole'))
+  .command(require('./unpublishConsole'))
   .demandCommand(1, 'You must specify a command to execute.').argv;

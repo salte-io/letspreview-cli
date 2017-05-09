@@ -2,7 +2,7 @@
 
 [![Chat with Us!](https://badges.gitter.im/salte-io/letspreview-cli.svg)](https://gitter.im/salte-io/letspreview-cli?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 [![Build Status](https://travis-ci.org/salte-io/letspreview-cli.svg?branch=master)](https://travis-ci.org/salte-io/letspreview-cli)
-[![Code Coverage Status](https://img.shields.io/coveralls/salte-io/letspreview-cli/master.svg)](https://coveralls.io/github/salte-io/letspreview-cli)
+[![Coverage Status](https://coveralls.io/repos/github/salte-io/letspreview-cli/badge.svg?branch=master)](https://coveralls.io/github/salte-io/letspreview-cli?branch=master)
 
 A command-line tool for deploying review apps to https://letspreview.io.
 
@@ -33,11 +33,17 @@ Displays help on commands and options:
 
 ### publish
 
-    $ letspreview publish
+Publishes the contents of the current working directory to https://myapp.letspreview.io:
+
+    $ letspreview publish myapp -k <api key>
+
+Visit http://letspreview.io to sign-up for free and receive your api key.
 
 ### unpublish
 
-    $ letspreview unpublish
+Removes https://myapp.letspreview.io:
+
+    $ letspreview unpublish myapp -k <api key>
 
 ## Supported node.js versions
 

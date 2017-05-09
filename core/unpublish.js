@@ -25,7 +25,6 @@ module.exports = (applicationName, apiKey, verboseFlag) => {
         reject(new Error(res.statusText));
       }
     }).catch((error) => {
-      console.log(JSON.stringify(error));
       let message = error.response && error.response.statusText ? error.response.statusText : error;
       log.writeLine(chalk.red(`Unable to remove the application ${applicationName}: ${message}`), log.LOG_LEVEL.ERROR);
       reject(new Error(message));

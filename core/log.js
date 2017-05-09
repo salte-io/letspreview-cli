@@ -25,7 +25,7 @@ module.exports = (() => {
     }
   }
 
-    function writeLine(message, level) {
+  function writeLine(message, level) {
     if (message) {
       message = `${message}\n`;
     }
@@ -36,6 +36,6 @@ module.exports = (() => {
     LOG_LEVEL,
     setCurrentLevel: setCurrentLevel,
     write: write,
-    writeLine, writeLine
+    writeLine: writeLine
   };
 })();
