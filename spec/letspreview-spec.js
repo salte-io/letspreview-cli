@@ -7,7 +7,7 @@ const utils = require('../lib/core/utils');
 const config = require('../lib/core/config');
 
 describe('letspreview publish', () => {
-  jasmine.DEFAULT_TIMEOUT_INTERVAL = 60000;
+  jasmine.DEFAULT_TIMEOUT_INTERVAL = 90000;
 
   it('should return unauthorized error message when the user passes an invalid api key.', (done) => {
     let appName = utils.generateName(3);
@@ -37,7 +37,7 @@ describe('letspreview publish', () => {
 });
 
 describe('letspreview unpublish', () => {
-  jasmine.DEFAULT_TIMEOUT_INTERVAL = 60000;
+  jasmine.DEFAULT_TIMEOUT_INTERVAL = 90000;
 
   it('should return success when a valid application and api key are specified.', (done) => {
     let appName = utils.generateName(5);

@@ -1,6 +1,6 @@
 verbose: false
 instrumentation:
-    root: ./core
+    root: ./lib/core
     extensions:
         - .js
     default-excludes: true

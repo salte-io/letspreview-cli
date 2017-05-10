@@ -11,9 +11,9 @@ branches:
 before_script:
   - npm prune
 script:
-  - npm run validate
+  - npm run lint
+  - npm run test
 after_success:
-  - npm run run-coverage
   - npm run report-coverage
   - npm run semantic-release
 notifications:
