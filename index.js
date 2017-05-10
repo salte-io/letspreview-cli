@@ -18,6 +18,6 @@ require('yargs').usage('$0 <cmd> <name> [options]')
     type: 'boolean',
     global: true
   })
-  .command(require('./publishConsole'))
-  .command(require('./unpublishConsole'))
+  .command(require('./lib/console/publishConsole'))
+  .command(require('./lib/console/unpublishConsole'))
   .demandCommand(1, 'You must specify a command to execute.').argv;

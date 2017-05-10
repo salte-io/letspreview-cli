@@ -1,9 +1,10 @@
 'use strict';
 
-const publish = require('../core/publish');
-const unpublish = require('../core/unpublish');
-const log = require('../core/log');
-const utils = require('../core/utils');
+const publish = require('../lib/core/publish');
+const unpublish = require('../lib/core/unpublish');
+const log = require('../lib/core/log');
+const utils = require('../lib/core/utils');
+const config = require('../lib/core/config');
 
 describe('letspreview publish', () => {
   jasmine.DEFAULT_TIMEOUT_INTERVAL = 60000;
@@ -21,8 +22,8 @@ describe('letspreview publish', () => {
 
   it('should return success when a valid application, api key, and directory are specified.', (done) => {
     let appName = utils.generateName(4);
-    publish(appName, process.env.key, './spec-data', log.LOG_LEVEL.VERBOSE).then(() => {
-      unpublish(appName, process.env.key, log.LOG_LEVEL.VERBOSE).then(() => {
+    publish(appName, config.API_KEY, './spec-data', log.LOG_LEVEL.VERBOSE).then(() => {
+      unpublish(appName, config.API_KEY, log.LOG_LEVEL.VERBOSE).then(() => {
         done();
       }).catch((error) => {
         log.writeLine(`Unable to remove test application ${appName}: ${error.message}`, log.LOG_LEVEL.ERROR);
@@ -40,8 +41,8 @@ describe('letspreview unpublish', () => {
 
   it('should return success when a valid application and api key are specified.', (done) => {
     let appName = utils.generateName(5);
-    publish(appName, process.env.key, './spec-data', log.LOG_LEVEL.VERBOSE).then(() => {
-      unpublish(appName, process.env.key, log.LOG_LEVEL.VERBOSE).then(() => {
+    publish(appName, config.API_KEY, './spec-data', log.LOG_LEVEL.VERBOSE).then(() => {
+      unpublish(appName, config.API_KEY, log.LOG_LEVEL.VERBOSE).then(() => {
         done();
       }).catch((error) => {
         fail(error.message);
@@ -55,7 +56,7 @@ describe('letspreview unpublish', () => {
 
   it('should return an application not found error message when an invalid application name is specified.', (done) => {
     let appName = utils.generateName(6);
-    unpublish(appName, process.env.key, log.LOG_LEVEL.VERBOSE).then(() => {
+    unpublish(appName, config.API_KEY, log.LOG_LEVEL.VERBOSE).then(() => {
       fail();
       done();
     }).catch((error) => {
