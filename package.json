@@ -1,13 +1,13 @@
 {
   "name": "letspreview-cli",
   "version": "0.0.0-semantically-released.0",
-  "description": "A commandline tool for Lets PReview",
+  "description": "A commandline tool for Lets Preview",
   "main": "index.js",
   "engines": {
-    "node": ">=4.0"
+    "node": ">=6.0"
   },
   "bin": {
-    "letspreview": "index.js"
+    "letspreview": "bin/letspreview.js"
   },
   "scripts": {
     "lint": "eslint *.js spec/**",
