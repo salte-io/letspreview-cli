@@ -1,7 +1,7 @@
 <!--
 If you are asking a question rather than filing a bug, you'll get better results
 using one of these instead:
-- Let's Preview Gitter Channel (https://gitter.im/salte-io/letspreview-cli)
+- Let's Preview Gitter Channel (https://gitter.im/letspreview/letspreview-cli)
 -->
 
 ### Description

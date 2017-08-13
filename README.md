@@ -1,8 +1,8 @@
 # letspreview-cli
 
-[![Chat with Us!](https://badges.gitter.im/salte-io/letspreview-cli.svg)](https://gitter.im/salte-io/letspreview-cli?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
-[![Build Status](https://travis-ci.org/salte-io/letspreview-cli.svg?branch=master)](https://travis-ci.org/salte-io/letspreview-cli)
-[![Coverage Status](https://coveralls.io/repos/github/salte-io/letspreview-cli/badge.svg?branch=master)](https://coveralls.io/github/salte-io/letspreview-cli?branch=master)
+[![Chat with Us!](https://badges.gitter.im/letspreview/letspreview-cli.svg)](https://gitter.im/letspreview/letspreview-cli?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
+[![Build Status](https://travis-ci.org/letspreview/letspreview-cli.svg?branch=master)](https://travis-ci.org/letspreview/letspreview-cli)
+[![Coverage Status](https://coveralls.io/repos/github/letspreview/letspreview-cli/badge.svg?branch=master)](https://coveralls.io/github/letspreview/letspreview-cli?branch=master)
 
 A command-line tool for deploying review apps to https://letspreview.io.
 
