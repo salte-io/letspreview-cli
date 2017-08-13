@@ -47,4 +47,4 @@ Removes https://myapp.letspreview.io:
 
 ## Supported node.js versions
 
-The `letspreview-cli` targets the current LTS version (4.x) of Node.js and later.
+The `letspreview-cli` targets the current LTS version (6.x) of Node.js and later.
