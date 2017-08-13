@@ -14,18 +14,17 @@
 
 const fetch = require('node-fetch');
 
-(function(fetch) {
-    global.fetch = function(input, options) {
-        return fetch.call(this, input, options).then(function(response) {
-            if (response.status >= 200 && response.status < 300) {
-                return response;
-            } else {
-                let error = new Error(response.statusText);
-                error.response = response;
-                throw error;
-            }
-        });
-    };
-})(fetch);
-
-module.exports = global.fetch;
+module.exports = (input, options) => {
+  return fetch.call(this, input, options).then((response) => {
+    if (response.status >= 200 && response.status < 300) {
+      return response;
+    }
+    const promise = response.headers.get('content-type').indexOf('application/json') === -1 ? response.text() : response.json();
+    return promise.then((content) => {
+      const error = new Error(content && content.message || content);
+      error.message = content && content.message;
+      error.response = response;
+      throw error;
+    });
+  });
+};

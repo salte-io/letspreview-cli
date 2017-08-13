@@ -1,14 +1,10 @@
 extends:
   - google
-  - 'plugin:jasmine/recommended'
 env:
   es6: true
-  jasmine: true
 rules:
   comma-dangle:
     - error
     - never
   max-len: off
   require-jsdoc: off
-plugins:
-  - jasmine

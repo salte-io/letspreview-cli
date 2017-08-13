@@ -12,14 +12,9 @@
  * http://letspreview.github.io/PATENTS.txt
  */
 
-module.exports = (() => {
-  const API_URL = process.env.API_URL || 'https://api.letspreview.io/';
-  const APP_URL_TEMPLATE = process.env.APP_URL_TEMPLATE || 'https://APP_NAME.letsprview.io/';
-  const API_KEY = 'cj2i8pqwd00003k6bh9qmjiqe';
+const config = {
+  LETS_PREVIEW_ENDPOINT: process.env.LETS_PREVIEW_ENDPOINT || 'https://api.letspreview.io',
+  LETS_PREVIEW_API_KEY: process.env.LETS_PREVIEW_API_KEY || 'cj69vm9m800003c5a59adv6rz'
+};
 
-  return {
-    API_URL: API_URL,
-    APP_URL_TEMPLATE: APP_URL_TEMPLATE,
-    API_KEY: API_KEY
-  };
-})();
+module.exports = config;

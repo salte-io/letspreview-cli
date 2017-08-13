@@ -12,22 +12,18 @@
  * http://letspreview.github.io/PATENTS.txt
  */
 
-require('yargs').usage('$0 <cmd> <name> [options]')
-  .group(['v', 'h', 'q'], 'Global Options')
-  .option('v', {
-    alias: 'verbose',
-    describe: 'Display Debugging Output',
-    type: 'boolean',
-    global: true
-  })
-  .help('h', 'Show Help')
-  .alias('h', 'help')
-  .option('q', {
-    alias: 'quiet',
-    describe: 'Suppress Output',
-    type: 'boolean',
-    global: true
-  })
-  .command(require('./lib/console/publishConsole'))
-  .command(require('./lib/console/unpublishConsole'))
-  .demandCommand(1, 'You must specify a command to execute.').argv;
+const exec = require('child-process-promise').exec;
+const expect = require('chai').expect;
+
+describe('command(help)', () => {
+  it('should return the full help message when the user fails to pass a command to execute.', () => {
+    return exec('bin/letspreview.js').then(() => {
+      return 'Help was not presented to the user!';
+    }).catch((result) => {
+      expect(result.stdout).to.equal('');
+      expect(result.stderr).to.match(/Commands:/);
+    }).then((error) => {
+      if (error) throw error;
+    });
+  });
+});
