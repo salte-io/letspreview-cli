@@ -12,18 +12,10 @@
  * http://letspreview.github.io/PATENTS.txt
  */
 
-module.exports = (() => {
-  function generateName(length) {
-    let text = '';
-    let possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+const publish = require('./publish/publish.js');
+const unpublish = require('./unpublish/unpublish.js');
 
-    for (let i = 0; i < length; i++)
-        text += possible.charAt(Math.floor(Math.random() * possible.length));
-
-    return text;
-  }
-
-  return {
-    generateName: generateName
-  };
-})();
+module.exports = {
+  publish,
+  unpublish
+};

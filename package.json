@@ -2,7 +2,7 @@
   "name": "letspreview-cli",
   "version": "0.0.0-semantically-released.0",
   "description": "A commandline tool for Lets Preview",
-  "main": "index.js",
+  "main": "src/letspreview-cli.js",
   "engines": {
     "node": ">=6.0"
   },
@@ -11,8 +11,8 @@
   },
   "scripts": {
     "lint": "eslint *.js spec/**",
-    "test": "istanbul cover node_modules/jasmine/bin/jasmine.js ./spec/**/*",
-    "report-coverage": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
+    "test": "nyc --reporter=lcov mocha test/**/*.spec.js --timeout 5000",
+    "report-coverage": "coveralls < coverage/lcov.info",
     "publish-latest": "publish-latest --user-email nick+salte-bot@salte.io --user-name salte-bot",
     "semantic-release": "semantic-release pre && npm publish && npm run publish-latest && semantic-release post"
   },
@@ -27,17 +27,21 @@
     "form-data": "^2.1.2",
     "node-fetch": "^1.6.3",
     "tar.gz": "^1.0.5",
+    "urljoin": "^0.1.5",
     "uuid": "^3.0.1",
+    "winston": "^2.3.1",
     "yargs": "^8.0.2"
   },
   "devDependencies": {
+    "chai": "^4.1.1",
+    "child-process-promise": "^2.2.1",
     "coveralls": "^2.13.1",
     "eslint": "^4.3.0",
     "eslint-config-google": "^0.9.1",
-    "eslint-plugin-jasmine": "^2.2.0",
-    "istanbul": "^0.4.5",
-    "istanbul-coveralls": "^1.0.3",
-    "jasmine": "^2.5.3",
+    "eslint-plugin-mocha": "^4.11.0",
+    "mocha": "^3.5.0",
+    "moniker": "^0.1.2",
+    "nyc": "^11.1.0",
     "semantic-release": "^6.3.6"
   }
 }

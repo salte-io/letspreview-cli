@@ -8,11 +8,9 @@ branches:
   only:
     - master
     - /^greenkeeper/.*$/
-before_script:
-  - npm prune
 script:
-  - npm run lint
-  - npm run test
+  - yarn run lint
+  - yarn test
 after_success:
   - npm run report-coverage
   - npm run semantic-release

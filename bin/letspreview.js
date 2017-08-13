@@ -31,4 +31,4 @@ if (!semver.satisfies(process.version, '>=6')) {
 }
 
 // Ok, safe to load ES2015.
-require('../index.js');
+require('../src/run.js');
