@@ -12,12 +12,13 @@
  * http://letspreview.github.io/PATENTS.txt
  */
 
+const path = require('path');
 const exec = require('child-process-promise').exec;
 const expect = require('chai').expect;
 
 describe('command(publish)', () => {
   it('should return a missing argument error message when the user neglects to provide an application name.', () => {
-    return exec('bin/letspreview.js publish').then(() => {
+    return exec(`node ${path.resolve('bin/letspreview.js')} publish`).then(() => {
       return 'Allowed to pass an invalid number of arguments!';
     }).catch((result) => {
       expect(result.stdout).to.equal('');
@@ -29,7 +30,7 @@ describe('command(publish)', () => {
   });
 
   it('should return a missing key error message when the user neglects to provide an api key.', () => {
-    return exec('bin/letspreview.js publish hello').then(() => {
+    return exec(`node ${path.resolve('bin/letspreview.js')} publish hello`).then(() => {
       return 'Invalid key was allowed!';
     }).catch((result) => {
       expect(result.stdout).to.equal('');
@@ -41,7 +42,7 @@ describe('command(publish)', () => {
   });
 
   it('should return an unauthorized error message when the user passes an invalid api key.', () => {
-    return exec('bin/letspreview.js publish hello -k invalid-key -d test/.mock-app').then(() => {
+    return exec(`node ${path.resolve('bin/letspreview.js')} publish hello -k invalid-key -d test/.mock-app`).then(() => {
       return 'Invalid key was allowed!';
     }).catch((result) => {
       expect(result.stdout).to.equal('');

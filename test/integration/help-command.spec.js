@@ -12,12 +12,13 @@
  * http://letspreview.github.io/PATENTS.txt
  */
 
+const path = require('path');
 const exec = require('child-process-promise').exec;
 const expect = require('chai').expect;
 
 describe('command(help)', () => {
   it('should return the full help message when the user fails to pass a command to execute.', () => {
-    return exec('bin/letspreview.js').then(() => {
+    return exec(`node ${path.resolve('bin/letspreview.js')}`).then(() => {
       return 'Help was not presented to the user!';
     }).catch((result) => {
       expect(result.stdout).to.equal('');

@@ -14,7 +14,7 @@
 
 const config = {
   LETS_PREVIEW_ENDPOINT: process.env.LETS_PREVIEW_ENDPOINT || 'https://api.letspreview.io',
-  LETS_PREVIEW_API_KEY: process.env.LETS_PREVIEW_API_KEY || 'cj69vm9m800003c5a59adv6rz'
+  LETS_PREVIEW_API_KEY: process.env.LETS_PREVIEW_API_KEY
 };
 
 module.exports = config;
