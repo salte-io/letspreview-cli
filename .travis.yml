@@ -16,11 +16,20 @@ branches:
   only:
     - master
     - /^greenkeeper/.*$/
-script:
-  - yarn run lint
-  - npm test
-after_success:
-  - npm run report-coverage
-  - npm run semantic-release
 notifications:
   email: change
+
+jobs:
+  include:
+    - stage: test
+      script:
+        - yarn run lint
+        - npm test
+    - stage: publish
+      node_js: 8
+      os: linux
+      script:
+        - npm test
+        - npm run report-coverage
+      after_success:
+        - npm run semantic-release
