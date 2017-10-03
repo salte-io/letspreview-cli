@@ -1,34 +1,12 @@
 sudo: false
 language: node_js
-node_js:
-  - 6
-  - 7
-  - 8
-os:
-  - linux
-  - osx
-env:
-  - LETS_PREVIEW_ENDPOINT="https://api.alpha.letspreview.io" LETS_PREVIEW_API_KEY="cj6uxivyp00003i5y97hv09ya"
-cache:
-  directories:
-    - node_modules
-branches:
-  only:
-    - master
-    - /^greenkeeper/.*$/
+node_js: node
+script:
+- echo $LETS_PREVIEW_API_KEY
+- echo $SAUCE_ACCESS_KEY
 notifications:
   email: change
-
-jobs:
-  include:
-    - stage: test
-      script:
-        - yarn run lint
-        - npm test
-    - stage: publish
-      node_js: 8
-      os: linux
-      script:
-        - npm test
-        - npm run report-coverage
-        - npm run semantic-release
+addons:
+  jwt:
+    - secure: Edm5nPfbfI5ka0taNu2OV+EQTKQtCHyyOZeOOg+mvo0ubhxaMBqlVxlLRSEnl7hVg4urAVSz6/uw4RA4ynvAHwE+WEWSGvvnMIwkDNkLPjYHoEU8pGyGBk8yIQb7OD+qqBhOk+dBE1z+S+fZLRNUgCgDt+bUhGYBHMWtme3NRIxd2eYiEjjai8ae0wV5+39asmAXxgrd4AKwYGa7/0rkGggCvDTQM1fGRBGQNNwhHRoq7dCIZCaElNRTfUGfB/EW6jod7zAPEFZs7DJV/caUKGsaOnF8ZioA8RoN+U9KY57FAfVXIe55A2GyVAaxLpA1VfwEQy+teadw0mpuN0B2sdtelwDXohbbGQ+u06uVmCabvadk6APDSWiQpJ5vWkBjcAfx3NKGsP5rN4TyOXAj0oPw51gDhIhYyA0ucadcYl69BaMmf6SP7q72AA8hr5mY/Ed5JfhnXmoPFnTmI2wIuJlAG0+YtYdvOFb/ojIMLfNXBvKucklGxJPWfnY4iiR5Y0gEFH6qdEG8AgDc9nYRuSeT7uYEteNbkXJWgI+CifFWJBrtzTD+CQoOFiRif+yJuUjlIkH7MlSG5lu//mGLUx2cGw7xksFLW77B94y5jcLlptWD3as0zG/waNVEVv9xxDS50o3XvEVFrsfyh3zJ3/NjA8LHmvczztcNC5SP5CQ=
+    - secure: mXUqCOCfUXxBAqvd283cz2XxXbD6F1YhJju9B3yDbqt11RWkLfinWDjbp7hHZO9Vk2CRb+4xEccSx1Y9byiQTo9ddOckj1I5T86UXkRxRp7vxpjs1zCx7LeDwFhqZLmeikDFAoJYmEOsF4PtaEs26iGHAWrTZ+puINUqsP7krzNBQti+1dHP1s9Pqn/7JGVwafuO7ga8tS+8snGgBt03AqMfiHlgqdcCQr8oMRJHO/mIU1WGo73ZxB15gdbaYsRwpKUEXzG4MO4o0R1iR4z9T8nyfTc1Q8fwOCqBMRBwMjfIk62Y4vzSVl38H72nFLHrE689U2dlBXR2sTaHjGInEE2fItoMBbMmCxlw8MLsPs12hfwy0b5/IM2Vdh4AYYxiXyhbq4YT7vXBS+prCMj/SIcnyc+DVN1YU/msOZY7ZyOE4Lc3xv4fNG9tSkkT7uswmDIKUOoBWsiY9qG97OutcoNzfySjmMWyvIGS9uiGFj/ayBQSjmESbbZRJtnVZHGeXSMm3Zi6yPelb0UOvRW2S+EHDhBKx6LpwUFX560OkF6HbtkMPJzOBjGj88hgidgUQATl2AZuOCYyxftWQg7puEjifWIZ7ElXjF2coAMCfO/QQPMtl2iajZKhP9EKDM48mv1S9P16OdyL5ThtqFeEQHKt4iCtJCBvk+9hEms7Szk=
