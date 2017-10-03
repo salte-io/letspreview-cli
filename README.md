@@ -2,6 +2,7 @@
 
 [![Chat with Us!](https://badges.gitter.im/letspreview/letspreview-cli.svg)](https://gitter.im/letspreview/letspreview-cli?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 [![Build Status](https://travis-ci.org/letspreview/letspreview-cli.svg?branch=master)](https://travis-ci.org/letspreview/letspreview-cli)
+[![Build status](https://ci.appveyor.com/api/projects/status/lquts0pseoe7ti5w/branch/master?svg=true)](https://ci.appveyor.com/project/nick-woodward/letspreview-cli/branch/master)
 [![Coverage Status](https://coveralls.io/repos/github/letspreview/letspreview-cli/badge.svg?branch=master)](https://coveralls.io/github/letspreview/letspreview-cli?branch=master)
 
 A command-line tool for deploying review apps to https://letspreview.io.
@@ -37,7 +38,7 @@ Publishes the contents of the current working directory to https://myapp.letspre
 
     $ letspreview publish myapp -k <api key>
 
-Visit http://letspreview.io to sign-up for free and receive your api key.
+Visit https://dashboard.letspreview.io to sign-up for free and receive your api key.
 
 ### unpublish
 

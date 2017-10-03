@@ -1,0 +1,28 @@
+# Test against this version of Node.js
+environment:
+  global:
+    lets_preview_endpoint: https://api.alpha.letspreview.io
+    lets_preview_api_key: cj6uxivyp00003i5y97hv09ya
+  matrix:
+    - nodejs_version: "6"
+    - nodejs_version: "7"
+    - nodejs_version: "8"
+
+# Install scripts. (runs after repo cloning)
+install:
+  - ps: Install-Product node $env:nodejs_version
+  # Get npm 3
+  - npm install -g npm
+  # install modules. Use --force to workaround permissions issues on Windows
+  - yarn install
+
+# Post-install test scripts.
+test_script:
+  # Output useful info for debugging.
+  - node --version
+  - npm --version
+  # run tests
+  - npm test
+
+# Don't actually build.
+build: off

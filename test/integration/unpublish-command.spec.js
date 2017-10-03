@@ -12,13 +12,14 @@
  * http://letspreview.github.io/PATENTS.txt
  */
 
+const path = require('path');
 const exec = require('child-process-promise').exec;
 const config = require('../../src/config');
 const expect = require('chai').expect;
 
 describe('command(unpublish)', () => {
   it('should return a missing argument error message when the user neglects to provide an application name.', () => {
-    return exec(`bin/letspreview.js unpublish -k ${config.LETS_PREVIEW_API_KEY}`).then(() => {
+    return exec(`node ${path.resolve('bin/letspreview.js')} unpublish -k ${config.LETS_PREVIEW_API_KEY}`).then(() => {
       return 'Allowed to pass an invalid number of arguments!';
     }).catch((result) => {
       expect(result.stdout).to.equal('');
@@ -30,7 +31,7 @@ describe('command(unpublish)', () => {
   });
 
   it('should return a missing argument error message when an invalid application name is passed.', () => {
-    return exec(`bin/letspreview.js unpublish invalid-name -k ${config.LETS_PREVIEW_API_KEY}`).then(() => {
+    return exec(`node ${path.resolve('bin/letspreview.js')} unpublish invalid-name -k ${config.LETS_PREVIEW_API_KEY}`).then(() => {
       return 'Allowed to pass an invalid number of arguments!';
     }).catch((result) => {
       expect(result.stdout).to.equal('');
@@ -42,7 +43,7 @@ describe('command(unpublish)', () => {
   });
 
   it('should return a missing key error message when the user neglects to provide an api key.', () => {
-    return exec('bin/letspreview.js unpublish hello').then(() => {
+    return exec(`node ${path.resolve('bin/letspreview.js')} unpublish hello`).then(() => {
       return 'Invalid key was allowed!';
     }).catch((result) => {
       expect(result.stdout).to.equal('');
@@ -54,7 +55,7 @@ describe('command(unpublish)', () => {
   });
 
   it('should return an unauthorized error message when the user passes an invalid api key.', () => {
-    return exec('bin/letspreview.js unpublish hello -k invalid-key').then(() => {
+    return exec(`node ${path.resolve('bin/letspreview.js')} unpublish hello -k invalid-key`).then(() => {
       return 'Invalid key was allowed!';
     }).catch((result) => {
       expect(result.stdout).to.equal('');
