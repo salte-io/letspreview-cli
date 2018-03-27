@@ -1,3 +1,5 @@
+**NOTE: THIS IS CURRENTLY A WORK IN PROGRESS AND SHOULD NOT BE UTILIZED IN ITS CURRENT STATE**
+
 # letspreview-cli
 
 [![Chat with Us!](https://badges.gitter.im/letspreview/letspreview-cli.svg)](https://gitter.im/letspreview/letspreview-cli?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
