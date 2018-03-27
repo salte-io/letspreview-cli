@@ -1,3 +1,7 @@
+branches:
+  only:
+    - master
+
 # Test against this version of Node.js
 environment:
   global:
